@@ -21,14 +21,12 @@ export default {
   }
 }
 </script>
-
-<style>
+<style lang="css" scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width:100%;
-  height:100%;
 }
-.wrap{display:flex;justify-content: flex-start;align-items: stretch;width: max-content;height:max-content;}
+.wrap{flex-grow:1;display:flex;justify-content: flex-start;align-items: stretch;}
+.contents_wrap{flex-grow:1;padding:20px;}
 </style>
