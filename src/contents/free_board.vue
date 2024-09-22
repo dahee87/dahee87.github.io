@@ -109,15 +109,6 @@
   </script>
   
   <style>
-  #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-    padding:30px 10px;
-  }
   .list{border-top:2px solid #333;}
   .item{border-bottom:1px solid #ddd;padding:10px 5px;cursor: pointer;}
   </style>
