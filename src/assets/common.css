@@ -1,5 +1,9 @@
 *{margin:0;padding:0;line-height: 1;font-size: 14px;box-sizing: border-box;}
+#app{text-align: left;margin:0;padding:0;height:100vh;display: flex;}
+input, img{vertical-align: middle;}
 button{cursor: pointer;}
+a{text-decoration: none;color:#333;}
+
 .flex_dir_10{
     display: flex;
     flex-direction: column;
@@ -7,6 +11,7 @@ button{cursor: pointer;}
 }
 .flex_SB{display: flex;justify-content: space-between;align-items: center;gap:10px;}
 .flex_L_8{display: flex;justify-content: flex-start;align-items: center;gap:8px;}
+.flex_L_3{display: flex;justify-content: flex-start;align-items: center;gap:3px;}
 .flex_R_8{display: flex;justify-content: flex-end;align-items: center;gap:8px;}
 .flex_C_5{display: flex;justify-content: center;align-items: center;gap:5px;}
 
