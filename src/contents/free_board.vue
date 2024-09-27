@@ -24,7 +24,7 @@
       </div>
       <div class="flex_C_5">
         <button>이전</button>
-        <button>10</button>
+        <button>101</button>
         <button>2</button>
         <button>3</button>
         <button>4</button>
