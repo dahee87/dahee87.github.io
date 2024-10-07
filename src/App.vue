@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Left_menu from './components/left_menu.vue';
+import Left_menu from './components/LeftMenu.vue';
 
 export default {
   name: 'App',
