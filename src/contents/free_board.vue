@@ -82,11 +82,11 @@
         modal.value = false;
       }
       
-      
-      axios.get("http://172.30.1.75:8080/board/list")
+      const params = { };
+      axios.get("http://localhost:8088/board/searchList", {params})
           .then((res) => {
             // 성공했을 경우
-          items.value.push(...res.data); // .value를 사용하여 배열에 추가
+          items.value.push(...res.data.responseJSON); // .value를 사용하여 배열에 추가
           })
           .catch((res) => {
             // 실패했을 경우
