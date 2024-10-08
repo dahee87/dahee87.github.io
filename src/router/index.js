@@ -1,7 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router";
-import free_board from "@/contents/free_board.vue";
-import jpa_test from "@/contents/jpa_test.vue";
-import main_visual from "@/contents/main_visual.vue";
+import free_board from "@/contents/FreeBoard.vue";
+import jpa_test from "@/contents/JpaTest.vue";
+import main_visual from "@/contents/MainVisual.vue";
 
 const routes = [
     {
