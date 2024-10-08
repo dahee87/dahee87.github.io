@@ -52,7 +52,7 @@ export default {
     Mo_dal
   },
   setup() {
-    const items = []; // ref로 선언
+    const items = ref([]); // ref로 선언
     const modalState = ref(false);
 
     const add = () =>{
@@ -68,8 +68,8 @@ export default {
       modalState.value = false;
     }
     
-    
-    axios.get("http://localhost:8088/study/searchBoardList")
+    const params = {};
+    axios.get("http://localhost:8088/study/searchBoardList", {params})
         .then((res) => {
           // 성공했을 경우
       
