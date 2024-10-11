@@ -1,12 +1,16 @@
 <template>
     <nav>
-        <RouterLink to="/">main</RouterLink>
-        <RouterLink to="/free_board">free_board</RouterLink>
-        <RouterLink to="/jpa_test">jpa_test</RouterLink>
+        <div class="nav_in">
+            <RouterLink to="/dash_board">dash_board</RouterLink>
+            <RouterLink to="/free_board">free_board</RouterLink>
+            <RouterLink to="/jpa_test">jpa_test</RouterLink>
+        </div>
+        <RouterLink to="/">log_out</RouterLink>
     </nav>
 </template>
 <style lang="css" scoped>
 nav{width:200px;border-right:1px solid #ddd;display: flex;flex-direction: column; justify-content: flex-start;padding:20px;gap:10px;}
-nav a:hover{color:#0984e3;}
-nav .router-link-active{color:#0984e3;}
+nav a:hover{color:#783ffd;}
+nav .router-link-active{color:#783ffd;}
+.nav_in{flex-grow:1;display: flex;flex-direction: column; justify-content: flex-start;gap:10px;}
 </style>

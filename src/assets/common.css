@@ -1,4 +1,4 @@
-*{margin:0;padding:0;line-height: 1;font-size: 14px;box-sizing: border-box;}
+*{margin:0;padding:0;line-height: 1;font-size: 14px;box-sizing: border-box;color:#333;}
 #app{text-align: left;margin:0;padding:0;height:100vh;display: flex;}
 input, img{vertical-align: middle;}
 button{cursor: pointer;}

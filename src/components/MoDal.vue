@@ -2,7 +2,7 @@
 <div class="modal_dimed">
     <div class="modal_wrap">
     <div class="modal_title flex_SB">
-        list item 추가
+        {{modalTitle}}
         <button class="modal_close" @click="$emit('modalClose')">X</button>
     </div>
     <div class="madal_contents flex_dir_10">
@@ -21,21 +21,19 @@
 </template>
 
 <script>
-// import { onMounted, ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import axios from 'axios';
 
 export default {
     name: 'MoDal',
-    props: ['modalState'],
-    // setup(props) {
-    setup() {
-        // const modalState = ref('');
-        // onMounted(() => {
-        //     modalState.value = props.modalState    
-        // })
+    props: ['modalTitle'],
+    setup(props) {
+        const modalTitle = ref('');
+        onMounted(() => {
+            modalTitle.value = props.modalTitle    
+        })
         return {
-        axios,
-        // modalState
+            axios,
         }
     }
 }

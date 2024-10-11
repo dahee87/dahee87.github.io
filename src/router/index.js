@@ -1,24 +1,39 @@
 import { createWebHistory, createRouter } from "vue-router";
+import lay_out from "@/components/LayOut.vue"
 import free_board from "@/contents/FreeBoard.vue";
 import jpa_test from "@/contents/JpaTest.vue";
-import main_visual from "@/contents/MainVisual.vue";
+import dash_board from "@/contents/DashBoard.vue";
+import log_in from "@/contents/LogIn.vue"
 
 const routes = [
     {
         path: "/",
-        name: "main_visual",
-        component: main_visual,
+        name: "log_in",
+        component: log_in,
     },
     {
-        path: "/free_board",
-        name: "free_board",
-        component: free_board,
+        path: "/",
+        name: "lay_out",
+        component: lay_out,
+        children:[
+            {
+                path: "/dash_board",
+                name: "dash_board",
+                component: dash_board,
+            },
+            {
+                path: "/free_board",
+                name: "free_board",
+                component: free_board,
+            },
+            {
+                path: "/jpa_test",
+                name: "jpa_test",
+                component: jpa_test,
+            },
+        ]
     },
-    {
-        path: "/jpa_test",  // TestComponent.vue로 이동할 Path
-        name: "jpa_test",  // router name
-        component: jpa_test,  // Path로 이동될 Component
-    },
+    
 ];
 
 const router = createRouter({
