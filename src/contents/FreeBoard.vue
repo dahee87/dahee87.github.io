@@ -103,6 +103,62 @@ export default {
   </div>
   <Mo_dal v-if="modalState" :modal-title="modalTitle" @modal-close="modalClose"></Mo_dal>
 </template>
+
+<script>
+import { ref } from 'vue';
+import axios from 'axios';
+import Mo_dal from '@/components/MoDal.vue';
+
+export default {
+  name: 'FreeBoard',
+  components: {
+    Mo_dal
+  },
+  setup() {
+    const items = ref([]); // ref로 선언
+    const modalState = ref(false);
+
+    const add = () =>{
+      modalState.value = true;
+    }
+    const modify = () =>{
+      modalState.value = true;
+    }
+    const modalChange = () =>{
+      modalState.value = true;
+    }
+    const modalClose = () =>{
+      modalState.value = false;
+    }
+    
+    const params = {};
+    axios.get("http://localhost:8088/study/searchBoardList", {params})
+        .then((res) => {
+          // 성공했을 경우
+      
+        console.log(res.data.responseJSON);
+        items.value.push(...res.data.responseJSON); // .value를 사용하여 배열에 추가
+        })
+        .catch((res) => {
+          // 실패했을 경우
+          console.error("실패 ", res);
+        });
+
+    console.log('items', items)
+
+    return {
+      add,
+      modify,
+      modalChange,
+      modalClose,
+      axios,
+      items,
+      modalState,
+    }
+  }
+}
+</script>
+
 <style lang="css" scoped>
 .list{border-top:2px solid #333;}
 .item{border-bottom:1px solid #ddd;padding:10px 5px;cursor: pointer;}
