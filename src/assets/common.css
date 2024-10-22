@@ -3,6 +3,7 @@
 input, img{vertical-align: middle;}
 button{cursor: pointer;}
 a{text-decoration: none;color:#333;}
+input, textarea{padding:3px;}
 
 .flex_dir_10{
     display: flex;

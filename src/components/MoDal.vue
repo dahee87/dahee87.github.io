@@ -2,17 +2,19 @@
 <div class="modal_dimed">
     <div class="modal_wrap">
     <div class="modal_title flex_SB">
-        {{modalTitle}}
+        {{modaltitle}}
         <button class="modal_close" @click="$emit('modalClose')">X</button>
     </div>
     <div class="madal_contents flex_dir_10">
         title
-        <input type="text" style="width:100%;" />
+        <input type="text" style="width:100%;" v-if="add" />
+        <input type="text" style="width:100%;" v-model="modalconttitle" v-else />
         contents
-        <textarea style="width:100%;height:200px;">
+        <textarea style="width:100%;height:200px;" v-model="mocalcontent">
         </textarea>
     </div>
     <div class="modal_bottom flex_R_8">
+        <button>수정</button>
         <button>저장</button>
         <button @click="$emit('modalClose')">취소</button>
     </div>
@@ -26,14 +28,21 @@ import axios from 'axios';
 
 export default {
     name: 'MoDal',
-    props: ['modalTitle'],
+    props: ['modalTitle', 'modalContTitle', 'modalContent'],
     setup(props) {
-        const modalTitle = ref('');
+        const modaltitle = ref('');
+        const modalconttitle = ref('');
+        const mocalcontent = ref('');
         onMounted(() => {
-            modalTitle.value = props.modalTitle    
+            modaltitle.value = props.modalTitle;
+            modalconttitle.value = props.modalContTitle;
+            mocalcontent.value = props.modalContent;
         })
         return {
             axios,
+            modaltitle,
+            modalconttitle,
+            mocalcontent,
         }
     }
 }

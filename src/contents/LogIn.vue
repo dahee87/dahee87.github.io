@@ -3,6 +3,7 @@
         <div class="login_wrap">
             <input type="text" placeholder="ID" />
             <input type="password" placeholder="PASSWORD" />
+            <label><input type="checkbox"> 아이디 저장</label>
             <RouterLink to="/dash_board">LOGIN</RouterLink>
         </div>
     </div>
@@ -36,4 +37,5 @@ export default {
         background-position: 0% 50%;
     }
 }
+.login_wrap label{font-size:12px;}
 </style>
