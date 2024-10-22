@@ -7,14 +7,11 @@
     </div>
     <div class="madal_contents flex_dir_10">
         title
-        <input type="text" style="width:100%;" v-if="add" />
-        <input type="text" style="width:100%;" v-model="modalconttitle" v-else />
-        contents
-        <textarea style="width:100%;height:200px;" v-model="mocalcontent">
-        </textarea>
+        <input type="text" style="width:100%;" v-model="modalconttitle" :readonly="modistate" />
+        <textarea style="width:100%;height:200px;" v-model="mocalcontent" :readonly="modistate"></textarea>
     </div>
     <div class="modal_bottom flex_R_8">
-        <button>수정</button>
+        <button @clcik="$emit('modify')" v-if="modistate">수정</button>
         <button>저장</button>
         <button @click="$emit('modalClose')">취소</button>
     </div>
@@ -28,21 +25,24 @@ import axios from 'axios';
 
 export default {
     name: 'MoDal',
-    props: ['modalTitle', 'modalContTitle', 'modalContent'],
+    props: ['modalTitle', 'modalContTitle', 'modalContent', 'modiState'],
     setup(props) {
         const modaltitle = ref('');
         const modalconttitle = ref('');
         const mocalcontent = ref('');
+        const modistate = ref();
         onMounted(() => {
             modaltitle.value = props.modalTitle;
             modalconttitle.value = props.modalContTitle;
             mocalcontent.value = props.modalContent;
+            modistate.value = props.modiState;
         })
         return {
             axios,
             modaltitle,
             modalconttitle,
             mocalcontent,
+            modistate,
         }
     }
 }

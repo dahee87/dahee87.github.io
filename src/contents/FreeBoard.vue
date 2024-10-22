@@ -38,7 +38,7 @@
       <button>다음</button>
     </div>
   </div>
-  <Mo_dal v-if="modalState" :modal-title="modalTitle" :modal-cont-title="modalContTitle" :modal-content="modalContent" :modal-add="modalAdd" @modal-close="modalClose"></Mo_dal>
+  <Mo_dal v-if="modalState" :modi-state="modiState" :modal-title="modalTitle" :modal-cont-title="modalContTitle" :modal-content="modalContent" :modal-add="modalAdd" @modal-close="modalClose" @modify="modify"></Mo_dal>
 </template>
 
 <script>
@@ -52,8 +52,9 @@ export default {
     Mo_dal
   },
   setup() {
-    const items = ref([]); // ref로 선언
+    const items = ref([]);
     const modalState = ref(false);
+    const modiState = ref(false);
     const modalTitle = ref('');
     const modalContTitle = ref('');
     const modalContent = ref('');
@@ -63,15 +64,21 @@ export default {
       modalTitle.value = 'list item 추가';
       modalContTitle.value = '';
       modalContent.value = '';
+      modiState.value = false;
     }
     const modalChange = (title, content) =>{
       modalState.value = true;
       modalTitle.value = title;
       modalContTitle.value = title;
       modalContent.value = content;
+      modiState.value = true;
     }
     const modalClose = () =>{
       modalState.value = false;
+    }
+    const modify = () =>{
+      modiState.value = false;
+      console.log(modiState);
     }
     
     const params = {};
@@ -99,6 +106,8 @@ export default {
       modalTitle,
       modalContTitle,
       modalContent,
+      modiState,
+      modify,
     }
   }
 }
